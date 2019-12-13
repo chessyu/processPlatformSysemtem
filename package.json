@@ -10,7 +10,7 @@
     "mkdircomponent": "node scripts/component",
     "createdpage": "node scripts/page",
     "createdtable": "node scripts/tablePage",
-    "test": "node buildModules"
+    "edit": "node scripts/editExtensionName"
   },
   "dependencies": {
     "@types/mockjs": "^1.0.2",
