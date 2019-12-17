@@ -1,18 +1,10 @@
-
-// 使用方法为：
-// 把该文件复制到要修改文件名的目录下；
-// 然后打开node.js执行node changeName.js命令；
-// 修改完成！
-// 可以在下面注释的地方自定义修改的逻辑；
- 
- 
 const fs = require('fs');
 const path = require('path');
 //解析需要遍历的文件夹，我的changName.js和27670326文件夹是同一个目录，27670326文件夹就是我要处理的文件夹
 
 const filePath = path.join(__dirname,'../src');
-console.log(filePath) 
- 
+const name = ['.ts','.js']; 
+
 //调用文件遍历方法
 fileDisplay(filePath);
  
@@ -42,9 +34,9 @@ function fileDisplay(filePath){
  
                             //这里请根据需要替换后缀名，我的是要把.blv替换成.flv
  
-                            if(filedir.indexOf('.ts')!=-1){
-                                filedir.replace('.ts','.js')
-                                rename(filedir,filedir.replace('.ts','.js',function(){
+                            if(filedir.indexOf(name[0])!=-1){
+                                filedir.replace(name[0],name[1])
+                                rename(filedir,filedir.replace(name[0],name[1],function(){
                                 }))
                             }
                         }

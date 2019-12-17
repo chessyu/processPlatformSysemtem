@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --mode",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "mkdirmodel": "node scripts/template",
     "mkdircomponent": "node scripts/component",

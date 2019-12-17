@@ -15,6 +15,13 @@ module.exports = {
   indexPath: 'index.html', // 指定生成的 index.html 输入路径，默认outputDir
   //productionSourceMap: false, // 开启 生产环境的 source map?
   lintOnSave: false,
+  css: { // 配置css模块
+    loaderOptions: { // 向预处理器 Loader 传递配置选项
+        less: { // 配置less（其他样式解析用法一致）
+              javascriptEnabled: true // 设置为true
+        }
+    }
+  },
   chainWebpack: config => {
     // 配置路径别名
     config.resolve.alias

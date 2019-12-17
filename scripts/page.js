@@ -11,7 +11,7 @@
  const dirName = allPath[2]  //取文件名
  const capPirName = dirName.substring(0,1).toUpperCase() + dirName.substring(1)  //首字母转大写
 
- if(delet){
+ if(delet == "delete"){
     console.log('相关文件及接口正在删除...')
     fs.unlinkSync(`${basePath}/views/model/${allPath[0]}/${allPath[1]}/${dirName}.vue`)
     fs.unlinkSync(`${basePath}/views/model/${allPath[0]}/${allPath[1]}/${dirName}.ts`)

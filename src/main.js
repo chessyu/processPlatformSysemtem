@@ -11,7 +11,7 @@ import Plugins from './assets/plugin/vue.plugins'
 
 
 import 'element-ui/lib/theme-chalk/index.css';
-import 'view-design/dist/styles/iview.css';
+import './assets/css/theme.less';
 import './assets/css/index.less'
 
 Vue.use(ViewUI);
