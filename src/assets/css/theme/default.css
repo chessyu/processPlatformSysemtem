@@ -1,0 +1,10 @@
+
+
+.default{
+    @import '~view-design/src/styles/index.less';
+
+    @css-prefix             : ivu-;
+    @css-prefix-iconfont    : ivu-icon;
+
+    @primary-color :#8c0776;
+}

@@ -125,7 +125,8 @@ html {
 }
 
 /******************************************内容区定制*********************************************************/
-:root{
+
+body{
     --borderColor : #e0e0e0;
 }
 
@@ -158,7 +159,7 @@ html {
 
 .ht__query-box{
     background: #fff;
-    padding: 20px 0;
+    padding: 20px 0 0 !important;
     // border-radius: 5px;
     overflow: hidden;
     box-shadow: 1px 1px 10px 1px var(--borderColor);
@@ -186,7 +187,7 @@ html {
     }
 }
 .ht__content {
-    margin: 15px 0 0 0;
+    margin: 10px 0 0 0 !important;
     background: #fff;
     // border-radius: 5px;
     box-shadow: 1px 1px 10px 1px var(--borderColor);

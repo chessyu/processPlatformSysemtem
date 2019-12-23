@@ -66,6 +66,7 @@
             2
         ], // 一个脚本最多几个申明类
         "variable-name": false,
-        "prefer-const": false // 提示可以用const的地方
+        "prefer-const": false, // 提示可以用const的地方
+        "moduleResolution": "node",//
     }
 }

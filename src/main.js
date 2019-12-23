@@ -11,13 +11,15 @@ import Plugins from './assets/plugin/vue.plugins'
 
 
 import 'element-ui/lib/theme-chalk/index.css';
-import './assets/css/theme.less';
 import './assets/css/index.less'
+// import 'view-design/dist/styles/iview.css';
+import '@/assets/css/setTheme'
 
 Vue.use(ViewUI);
 Vue.use(ElementUI);
 Vue.use(FormSubunit)
 Vue.use(Plugins);
+
 
 Vue.config.productionTip = false
 Vue.prototype.$echarts = Echart;
