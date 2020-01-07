@@ -2,9 +2,49 @@
 
 .default{
     @import '~view-design/src/styles/index.less';
+    --themeBackColor : linear-gradient(90deg, #1d42ab, #2173dc, #1e93ff);   //header 主题色
+    --borderColorShadow : #e0e0e0;  //边框线隐影
 
-    @css-prefix             : ivu-;
-    @css-prefix-iconfont    : ivu-icon;
+    --borderColor : #e0e0e0;  //边框线
+    --acitveBackColor: #07bb6ac7;  //选中背景色
+    --activeElColor: #fff; //。选中元素内的子元素背景色
+    --themColor:#fff;  //选中字体色
 
-    @primary-color :#8c0776;
+    --noActiveBackColor: #fff;  //未选中背景色
+    --noActiveFontColor: #515a6e; //未选中字体颜色
+
+    
+    --fontColor:#fff; //字体颜色
+    
+
+    // Color
+    // @primary-color          : #1d42ab;
+
+    .el-menu-item{
+        position: relative;
+    }
+    .el-menu-item.is-active::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: var(--themColor);
+    }
+    .el-tooltip__popper.is-dark{
+        padding: 10px 20px;
+    }
+
+    .ivu-divider-inner-text{
+        position: relative;
+        top: -10px;
+        background: #fff;
+    }
+    .ivu-divider-with-text-center{
+        text-align: center;
+    }
+    
+    .content_bread>span:last-child .ivu-breadcrumb-item-separator{
+        display: none;
+    }
 }

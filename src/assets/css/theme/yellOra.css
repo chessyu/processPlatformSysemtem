@@ -1,0 +1,83 @@
+.yellOra{
+    @import '~view-design/src/styles/index.less';
+    --themeBackColor : linear-gradient(90deg, orange, #f9ac1e, #fdbc45);   //header 主题色
+    
+    --borderColorShadow : #ff8c31;  //边框线隐影
+    --borderColor : #e0e0e0;  //边框线
+    --acitveBackColor: #ffa631;  //选中背景色
+    --themColor:#896c39;  //选中字体色
+
+    --noActiveBackColor: #fff;  //未选中背景色
+    --noActiveFontColor: #515a6e; //未选中字体颜色
+
+    --fontColor:#01948e;
+    --activeElColor: #fff; //。选中元素内的子元素背景色
+
+    // Color
+    @primary-color          : #ff8c31;
+    @link-color             : #ff0097;
+    /******************* 当前主题特定样式 ****************************/
+    .layout-logo{
+        color: var(--fontColor);
+        background: var(--themeBackColor) !important;
+        border-bottom:#fdb532 !important;
+    }
+    .el-menu{
+        background: var(--themeBackColor);
+    }
+    .el-submenu .el-menu{
+        background:#fdb532 !important;
+    }
+    .el-menu-item.is-active{
+        background: var(--acitveBackColor);
+        color: var(--fontColor);
+    }
+    .el-menu-item:focus, .el-menu-item:hover{
+        background-color:  var(--acitveBackColor);
+    }
+    .el-submenu__title:hover{
+        background-color:  var(--acitveBackColor);
+    }
+    .el-menu-item,.el-submenu__title,.el-menu-item.is-active i{
+        color: var(--fontColor);
+    }
+    .ht__query-box,.ht__content{
+        box-shadow: unset !important;
+    }
+
+    /******************* 重写iview公共样式 ****************************/
+    .el-menu-item{
+        position: relative;
+    }
+    .el-menu-item.is-active::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: var(--themColor);
+    }
+    .el-tooltip__popper.is-dark{
+        padding: 10px 20px;
+    }
+
+    .ivu-divider-inner-text{
+        position: relative;
+        top: -10px;
+        background: #fff;
+    }
+    .ivu-divider-with-text-center{
+        text-align: center;
+    }
+    
+    .content_bread>span:last-child .ivu-breadcrumb-item-separator{
+        display: none;
+    }
+
+
+
+
+
+
+
+}

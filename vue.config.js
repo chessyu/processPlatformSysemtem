@@ -9,11 +9,11 @@ const resolve = dir => {
 }
 
 module.exports = {
-  publicPath: '/',
+  publicPath: node_env?'./': '/',
   outputDir: 'dist', // 打包生成的生产环境构建文件的目录
   assetsDir: 'assets', // 放置生成的静态资源路径，默认在outputDir
   indexPath: 'index.html', // 指定生成的 index.html 输入路径，默认outputDir
-  //productionSourceMap: false, // 开启 生产环境的 source map?
+  productionSourceMap: node_env, // 开启 生产环境的 source map?
   lintOnSave: false,
   css: { // 配置css模块
     loaderOptions: { // 向预处理器 Loader 传递配置选项
@@ -28,7 +28,7 @@ module.exports = {
     // 配置路径别名
     config.resolve.alias
       .set('@', resolve('src'))
-
+      .set('C',resolve('src/types/components'))
   },
   devServer: {
     host:'0.0.0.0',

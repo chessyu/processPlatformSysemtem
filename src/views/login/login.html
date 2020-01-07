@@ -25,7 +25,7 @@
                     <Input prefix="md-lock" type="password" v-model="formInline.password"  placeholder="请输入密码"/>
                 </FormItem>
                 <FormItem label="记住密码">
-                    <i-switch class="rem-switch" v-model="remember" true-color="#009688" ></i-switch>
+                    <i-switch class="rem-switch" v-model="remember" ></i-switch>
                 </FormItem>
                 <FormItem>
                     <div class="login-bottom" @click="singIn">
@@ -107,9 +107,9 @@
             transform: translateY(-50%);
             padding: 50px 50px 10px;
             border-radius: 5px;
-            background:#ffffff94;
+            background:#ffffffbd;
             margin: auto;
-            box-shadow:0 0 50px #009688;
+            box-shadow:0 0 25px var(--borderColorShadow);
             cursor: pointer;
             transition: all 3s ease;
             .company_logo{
@@ -122,35 +122,35 @@
                     width: 80px;
                     height: 80px;
                     border-radius: 80px;
-                    background: #ffffff94;
-                    box-shadow: 0 0 50px #009688;
+                    background: #ffffffbd;
+                    box-shadow:0 0 25px var(--borderColorShadow);
                     transition: all 3s ease;
                 }
             }
         }
-        & .form:hover{
-            background:#fff !important;
-            transition: all 3s ease;
-            & .comp_text{
-                color: transparent !important;
-                background-image: linear-gradient(135deg,#009688,blue);
-                -webkit-background-clip: text;
-                // animation: bagrc 5s infinite linear;
-                transition: all 3s ease;
-            }
-            & .company_logo img {
-                background:#fff !important;
-                transition: all 3s ease;
-            }
-            & .login-bottom::after{
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                animation: wave 2s infinite linear
-            }
-        }
+        // & .form:hover{
+        //     background:#fff !important;
+        //     transition: all 3s ease;
+        //     & .comp_text{
+        //         color: transparent !important;
+        //         background-image: linear-gradient(135deg,#009688,blue);
+        //         -webkit-background-clip: text;
+        //         // animation: bagrc 5s infinite linear;
+        //         transition: all 3s ease;
+        //     }
+        //     & .company_logo img {
+        //         background:#fff !important;
+        //         transition: all 3s ease;
+        //     }
+        //     & .login-bottom::after{
+        //         content: '';
+        //         position: absolute;
+        //         top: 50%;
+        //         left: 50%;
+        //         transform: translate(-50%,-50%);
+        //         animation: wave 2s infinite linear
+        //     }
+        // }
         & .ches_formAction{
             background:#fff;
         }
@@ -170,14 +170,14 @@
     float: right;
 }
 .login-bottom{
-    background: #009688;
+    background: linear-gradient(90deg, #1d42ab, #2173dc, #1e93ff);
     color: #fff;
     text-align: center;
     cursor: pointer;
     position: relative;
 }
 .login-bottom:hover{
-    background: #009688d4;
+    background: linear-gradient(90deg, #3254b1, #317cdf, #42a4ff);
 }
 @keyframes wave {
     0%{
@@ -206,7 +206,7 @@
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    color: #009688d4;
+    color: var(--fontColor);
     font-family: cursive;
     transition: all 1s ease;
 }

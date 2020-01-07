@@ -1,21 +1,28 @@
 
-import { Component, Vue } from "vue-property-decorator"
+import { Component, Vue, PropSync,  } from "vue-property-decorator"
 import { GetSonSysetemList, GetSysMenuList } from "@/api/layout" 
+import themeConfig from '@/types/components/drawerShadow/themeConfig.vue'
 
 import { LayoutData } from '@/types/views/layout.interface'
 import { Getter, Action } from "vuex-class"
 
 
 @Component({
-  name:"layoutI"
+  name:"layoutI",
+  components:{
+    themeConfig
+  }
 })
 export default class LayoutI extends Vue{
 
+  bread: string[] = ['发行平台','首页'];
   isCollapsed :boolean = false; //菜单是否默认展开
   menuDefaultActive:string = '/cdk/index'; //定义菜单默认选中
   showIcon:boolean = false; //是否显示两边切换按钮
   tagListWidth:number = 0; //选项卡的总宽度
   moveWidth:number = 0; //当前平移的数
+  openThemeConf:Boolean = false;  //配置主题
+
 
   /***子系统数据*/
   sonSystem = [];
@@ -157,6 +164,7 @@ export default class LayoutI extends Vue{
 
   //打开菜单
   openMenuItem(key:string, keyPath:any ,event:any):void {
+    this.breadcrumbItem(event);
     this.menuDefaultActive = key;
     let hasTag = this.tag.filter((e:any) => e.path === key)
     if(hasTag.length === 0){
@@ -183,6 +191,18 @@ export default class LayoutI extends Vue{
     }else{
       this.TagActive(hasTag[0].path);
     }
+  }
+
+  //全局导航
+  breadcrumbItem(event:any){
+    let currentTarget = event.$el.innerText;
+    let parents = event.$el.parentNode.previousSibling.innerText;
+    if(event.$el.parentNode.getAttribute('role') === 'menubar'){
+      this.bread = ['发行平台',currentTarget]
+    }else{
+      this.bread = ['发行平台',parents,currentTarget]
+    }
+    
   }
 
   //往左切换
@@ -263,7 +283,14 @@ export default class LayoutI extends Vue{
     }
   }
 
-  
+  //打开配置主题抽屉
+  openDrawer(type?: Boolean | undefined){
+    if(typeof type === "boolean"){
+      this.openThemeConf = false;
+    }else{
+      this.openThemeConf = true;
+    }
+  }
 
   get menuitemClasses() {
     return [

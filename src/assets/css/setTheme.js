@@ -1,6 +1,8 @@
 
 import './theme/default.less'
-import './theme/test.less'
+import './theme/lnkBlack.less'
+import './theme/pureWhite.less'
+import './theme/yellOra.less'
 
 let theme = localStorage.getItem('theme');
 if(!theme){
